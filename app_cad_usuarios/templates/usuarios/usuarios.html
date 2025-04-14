@@ -1,0 +1,44 @@
+{% extends 'usuarios/base.html' %} <!-- Estende o template base, herdando a estrutura principal -->
+
+{% block conteudo %} <!-- Início do bloco de conteúdo que será inserido no base.html -->
+
+<div class="container">
+
+    <h1>Usuários Cadastrados</h1>
+    
+    <!-- Tabela com estilo do Bootstrap: bordas e listras alternadas -->
+    <table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+              <th>ID</th>
+              <th>Nome</th>
+              <th>Idade</th>
+              <th>Ações</th> <!-- Nova coluna -->
+          </tr>
+        </thead>
+        
+        <tbody>
+          <!-- Laço de repetição para exibir cada usuário da lista -->
+          {% for usuario in usuarios %}
+          <tr>
+              <td>{{ usuario.id_usuario }}</td>
+              <td>{{ usuario.nome }}</td>
+              <td>{{ usuario.idade }}</td>
+              <td>
+                <!-- Botão para editar -->
+                <a href="{% url 'editar_usuario' usuario.id_usuario %}" class="btn btn-sm btn-warning">Editar</a>
+
+                <!-- Botão para excluir -->
+                <a href="{% url 'excluir_usuario' usuario.id_usuario %}" 
+                   class="btn btn-sm btn-danger" 
+                   onclick="return confirm('Tem certeza que deseja excluir este usuário?');">
+                   Excluir
+                </a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+</div>
+
+{% endblock %}

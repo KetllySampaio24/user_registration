@@ -1,0 +1,52 @@
+{% extends 'usuarios/base.html' %}
+{% block conteudo %}
+
+<!-- Estilo customizado para os botões -->
+<style>
+  .btn-cinza {
+    background-color: #721099; /* cinza padrão */
+    color: white;
+    border: none;
+  }
+
+  .btn-cinza:hover {
+    background-color: #586299; /* cinza um pouco mais escuro ao passar o mouse */
+    color: white;
+  }
+</style>
+
+<div class="container text-center mt-5">
+    <h1>Cadastro de Usuários</h1>
+
+    <!-- Formulário de cadastro -->
+    <form action="{% url 'listagem_usuarios' %}" method="post" class="my-4">
+        {% csrf_token %}
+
+        <!-- Campo para nome -->
+        <div class="mb-3">
+            <label for="nome" class="form-label">Nome</label>
+            <input id="nome" name="nome" type="text" class="form-control form-control-sm" required>
+        </div>
+
+        <!-- Campo para idade -->
+        <div class="mb-3">
+            <label for="idade" class="form-label">Idade</label>
+            <input id="idade" name="idade" type="number" class="form-control form-control-sm" required>
+        </div>
+
+        <!-- Botões lado a lado com cor personalizada -->
+        <div class="d-flex justify-content-center gap-2">
+            <!-- Botão de cadastro -->
+            <button type="submit" class="btn btn-cinza btn-sm">
+                Cadastrar
+            </button>
+
+            <!-- Botão para ver usuários -->
+            <a href="{% url 'listagem_usuarios' %}" class="btn btn-cinza btn-sm">
+                Ver usuários cadastrados
+            </a>
+        </div>
+    </form>
+</div>
+
+{% endblock %}
