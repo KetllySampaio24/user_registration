@@ -11,13 +11,11 @@ Este é um projeto de **registro de usuários** desenvolvido com o framework **D
 
 ## ⚙️ Funcionalidades
 
-- **Cadastro de novos usuários**: Permite que os usuários se registrem fornecendo nome, email e senha.
+- **Cadastro de novos usuários**: Permite que os usuários se registrem fornecendo nome e idade.
 - **Validação de formulários**: Valida os dados fornecidos para garantir que os campos obrigatórios sejam preenchidos corretamente.
-- **Autenticação de usuários**: Implementação de login e autenticação usando email e senha.
-- **Armazenamento seguro das senhas**: As senhas dos usuários são criptografadas usando o mecanismo de hashing do Django.
 - **Interface simples e funcional**: A interface do usuário é limpa e permite fácil navegação para cadastrar, autenticar e visualizar usuários cadastrados.
 
-## Exemplo da aplicação
+## 💻 Exemplo da Aplicação
 ![image](https://github.com/user-attachments/assets/7ec3ba2b-de46-4347-9da4-2390c32ffcc8)
 ![image](https://github.com/user-attachments/assets/fc134bad-422d-4561-94a5-c7916b4ab4ea)
 
